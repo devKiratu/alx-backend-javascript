@@ -13,7 +13,7 @@ export default function handleProfileSignup(firstName, lastName, fileName) {
         } else if (v.status === 'rejected') {
           result.push({
             status: v.status,
-            value: v.reason.message,
+            value: `${v.reason}`,
           });
         }
       });
