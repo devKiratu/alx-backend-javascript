@@ -4,6 +4,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
 module.exports = {
+  mode: "development",
   entry: "./js/main.ts",
   devtool: "inline-source-map",
   module: {
@@ -35,4 +36,3 @@ module.exports = {
     path: path.resolve(__dirname, "dist")
   }
 };
-
