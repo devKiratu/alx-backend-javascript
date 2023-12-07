@@ -29,8 +29,8 @@ const studentsTable: HTMLTableElement = document.createElement('table');
 // table headers
 const header = studentsTable.createTHead();
 const headerRow = header.insertRow();
-const nameTh: HTMLTableHeaderCellElement = document.createElement('th');
-const locationTh: HTMLTableHeaderCellElement = document.createElement('th');
+const nameTh: HTMLTableCellElement = document.createElement('th');
+const locationTh: HTMLTableCellElement = document.createElement('th');
 nameTh.innerHTML = 'FirstName';
 locationTh.innerHTML = 'Location';
 
