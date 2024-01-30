@@ -6,12 +6,12 @@ if (process.stdin.isTTY) {
   process.stdin.on('readable', () => {
     const chunk = process.stdin.read();
     if (chunk) {
-      process.stdin.write(`Your name is: ${chunk}`);
+      process.stdout.write(`Your name is: ${chunk}`);
     }
   });
 } else {
   process.stdin.on('data', (data) => {
-    process.stdout.write(data);
+    process.stdout.write(`Your name is: ${data}`);
   });
   process.stdin.on('end', () => {
     process.stdout.write('This important software is now closing\n');
