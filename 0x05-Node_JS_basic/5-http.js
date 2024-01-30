@@ -39,12 +39,15 @@ const app = http.createServer();
 app.on('request', async (req, res) => {
   switch (req.url) {
     case '/students':
+      res.write('This is the list of our students\n');
       countStudents(process.argv[2])
         .then((messages) => {
-          const final = `This is the list of our students\n${messages.join('\n')}`;
+          const final = `${messages.join('\n')}`;
+          res.statusCode = 200;
           res.end(final);
         }).catch((err) => {
-          const final = `This is the list of our students\n${err.message}`;
+          const final = `${err.message}`;
+          res.statusCode = 404;
           res.end(final);
         });
       break;
