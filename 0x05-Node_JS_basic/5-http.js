@@ -44,7 +44,8 @@ app.on('request', async (req, res) => {
           const final = `This is the list of our students\n${messages.join('\n')}`;
           res.end(final);
         }).catch((err) => {
-          res.end(`${err}`);
+          const final = `This is the list of our students\n${err}`;
+          res.end(final);
         });
       break;
     default:
