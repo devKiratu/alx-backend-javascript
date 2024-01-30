@@ -11,7 +11,7 @@ export default class StudentsController {
       }
       response.status(200).send(`${firstLine}${messages.join('\n')}`);
     } catch (error) {
-      response.status(500).send(`${firstLine}${error.message}`);
+      response.status(500).send(`${error.message}`);
     }
   }
 
