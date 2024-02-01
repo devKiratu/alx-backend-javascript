@@ -8,8 +8,8 @@ describe('Index Page', () => {
     it('should return 200', (done) => {
       request(url, (err, res, body) => {
         expect(res.statusCode).to.equal(200);
+        done();
       });
-      done();
     });
   });
 
@@ -17,8 +17,8 @@ describe('Index Page', () => {
     it('should return Welcome to the payment system', (done) => {
       request(url, (err, res, body) => {
         expect(res.body).to.equal('Welcome to the payment system');
+        done();
       });
-      done();
     });
   });
 });
@@ -30,8 +30,8 @@ describe('Cart Page', () => {
     it('should return 200', (done) => {
       request(`${url}/3`, (err, res, body) => {
         expect(res.statusCode).to.equal(200);
+        done();
       });
-      done();
     });
   });
 
@@ -39,8 +39,8 @@ describe('Cart Page', () => {
     it('should return 404', (done) => {
       request(`${url}/hello`, (err, res, body) => {
         expect(res.statusCode).to.equal(404);
+        done();
       });
-      done();
     });
   });
 
@@ -48,8 +48,8 @@ describe('Cart Page', () => {
     it('should return "Payment methods for cart 12"', (done) => {
       request(`${url}/12`, (err, res, body) => {
         expect(res.body).to.equal('Payment methods for cart 12');
+        done();
       });
-      done();
     });
   });
 });
@@ -65,8 +65,8 @@ describe('Login Page', () => {
         body: { userName: 'Betty' }
       }, (err, res, body) => {
         expect(res.statusCode).to.equal(200);
+        done();
       });
-      done();
     });
   });
 
@@ -79,8 +79,8 @@ describe('Login Page', () => {
         body: {}
       }, (err, res, body) => {
         expect(res.statusCode).to.equal(400);
+        done();
       });
-      done();
     });
   });
 
@@ -93,8 +93,8 @@ describe('Login Page', () => {
         body: { userName: 'Betty' }
       }, (err, res, body) => {
         expect(res.body).to.equal('Welcome Betty');
+        done();
       });
-      done();
     });
   });
 });
@@ -106,8 +106,8 @@ describe('Available Payments Page', () => {
     it('should return 200', (done) => {
       request(url, (err, res, body) => {
         expect(res.statusCode).to.equal(200);
+        done();
       });
-      done();
     });
   });
 
@@ -121,8 +121,8 @@ describe('Available Payments Page', () => {
       };
       request(url, (err, res, body) => {
         expect(JSON.parse(res.body)).to.deep.equal(paymentsObject);
+        done();
       });
-      done();
     });
   });
 });
