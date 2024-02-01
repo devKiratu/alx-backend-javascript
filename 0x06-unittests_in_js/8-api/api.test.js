@@ -8,8 +8,8 @@ describe('Index Page', () => {
     it('should return 200', (done) => {
       request(url, (err, res, body) => {
         expect(res.statusCode).to.equal(200);
+        done();
       });
-      done();
     });
   });
 
@@ -17,8 +17,8 @@ describe('Index Page', () => {
     it('should return Welcome to the payment system', (done) => {
       request(url, (err, res, body) => {
         expect(res.body).to.equal('Welcome to the payment system');
+        done();
       });
-      done();
     });
   });
 });
